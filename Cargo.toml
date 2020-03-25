@@ -8,7 +8,7 @@ edition = "2018"
 cbindgen="0.13.2"
 
 [lib]
-name = "cutii_boards_test"
+name = "cbindgen_test"
 crate-type = ["cdylib"] # could be `staticlib` as well
 
 # cbindgen . -o yeepi.hpp
