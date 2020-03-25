@@ -1,0 +1,14 @@
+[package]
+name = "cbindgen-tests"
+version = "0.1.0"
+authors = ["Pierrick Mirabel <pmirabel@cutii.io>"]
+edition = "2018"
+
+[build-dependencies]
+cbindgen="0.13.2"
+
+[lib]
+name = "cutii_boards_test"
+crate-type = ["cdylib"] # could be `staticlib` as well
+
+# cbindgen . -o yeepi.hpp
