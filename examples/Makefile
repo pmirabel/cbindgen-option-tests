@@ -5,13 +5,13 @@ CXX_FLAGS := -Wall -Wextra -std=c++17 -g
 SRC		:= src
 
 ifeq ($(shell uname -s), Darwin) 
-	LIBRARIES := ../target/release/deps/libcutii_boards_test.dylib
+	LIBRARIES := ../target/release/deps/libcbindgen_test.dylib
 else
-    LIBRARIES := ../target/release/deps/libcutii_boards_test.so
+    LIBRARIES := ../target/release/deps/libcbindgen_test.so
 endif
 
 ifeq ($(shell uname -s), Darwin) 
-	INCLUDE	:= libcutii.hpp
+	INCLUDE	:= libcbindgen.hpp
 else
 	INCLUDE	:= .
 endif
@@ -25,7 +25,7 @@ run: clean all
 
 $(EXECUTABLE): main.cpp
 	-cd .. && cargo build --release 
-	-cd .. && cbindgen . -o examples/libcutii.hpp
+	-cd .. && cbindgen . -o examples/libcbindgen.hpp
 	-$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $@ $(LIBRARIES)
 
 clean:
